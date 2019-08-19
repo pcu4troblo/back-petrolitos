@@ -20,7 +20,7 @@ app.use(bodyParserURLEncoded);
 //app.use(cors());
 
 app.use((req,res,next)=>{
-  res.setHeader('Access-Control-Allow-Origin', 'https://front-petrolitos.herokuapp.com/auth/register');
+  res.setHeader('Access-Control-Allow-Origin', 'https://front-petrolitos.herokuapp.com');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
