@@ -20,15 +20,17 @@ app.use(bodyParserURLEncoded);
 //app.use(cors());
 
 app.use((req,res,next)=>{
-  res.Header('Access-Control-Allow-Origin', '*');
+  res.Header("Access-Control-Allow-Origin", "*");
 
   // Request methods you wish to allow
-  res.Header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.Header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
 
   // Request headers you wish to allow
-  res.Header('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-  next();
+  if (req.method === 'OPTIONS'){
+  res.Header("Access-Control-Allow-Headers", "X-Requested-With,content-type");
+  return res.status(200).json({});
+}
+ next();
 });
 
 app.use('/api', router);
