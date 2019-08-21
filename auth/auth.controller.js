@@ -55,7 +55,7 @@ exports.loginUser = (req, res, next) => {
           accessToken: accessToken,
           expiresIn: expiresIn
         }
-        res.send({ dataUser });
+        res.send({ dataUser }, status);
       } else {
         // password wrong
         res.status(409).send({ message: 'Something is wrong' });
