@@ -17,7 +17,7 @@ const bodyParserURLEncoded = bodyParser.urlencoded({ extended: true });
 app.use(bodyParserJSON);
 app.use(bodyParserURLEncoded);
 
-//app.use(cors());
+app.use(cors());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
