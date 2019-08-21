@@ -7,7 +7,8 @@ exports.createUser = (req, res, next) => {
   const newUser = {
     name: req.body.name,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password)
+    password: bcrypt.hashSync(req.body.password),
+    tipo: req.body.tipo
   }
 
   User.create(newUser, (err, user) => {
@@ -21,6 +22,7 @@ exports.createUser = (req, res, next) => {
     const dataUser = {
       name: user.name,
       email: user.email,
+      tipo: user.tipo,
       accessToken: accessToken,
       expiresIn: expiresIn
     }
@@ -49,6 +51,7 @@ exports.loginUser = (req, res, next) => {
         const dataUser = {
           name: user.name,
           email: user.email,
+          tipo: user.tipo,
           accessToken: accessToken,
           expiresIn: expiresIn
         }

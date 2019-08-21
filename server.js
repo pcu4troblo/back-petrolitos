@@ -36,6 +36,7 @@ app.use(cors());
 app.use('/api', router);
 
 authRoutes(router);
+
 router.get('/', (req, res) => {
   res.send('Hello from home');
 });

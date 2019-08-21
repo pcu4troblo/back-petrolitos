@@ -17,7 +17,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
     trim: true
+  },
+  tipo:{
+    type: String,
+    required: true,
+    trim: true
   }
+  
 }, {
     timestamps: true
   });
