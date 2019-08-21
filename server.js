@@ -19,7 +19,7 @@ app.use(bodyParserURLEncoded);
 
 //app.use(cors());
 
-/*app.use((req,res,next)=>{
+app.use((req,res,next)=>{
   res.Header("Access-Control-Allow-Origin", "*");
 
   // Request methods you wish to allow
@@ -31,7 +31,7 @@ app.use(bodyParserURLEncoded);
   return res.status(200).json({});
 }
  next();
-});*/
+});
 
 app.use('/api', router);
 
